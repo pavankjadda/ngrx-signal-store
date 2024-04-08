@@ -11,8 +11,6 @@ import { EmployeeType } from './employee-type.enum';
   standalone: true,
   template: `
     <h1>Employees</h1>
-
-    
     @for(employee of employeeStore.data(); track employee.email){
       <summary>  {{ employee.lastName }}, {{ employee.firstName }} and 
            Type: 
