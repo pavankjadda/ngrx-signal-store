@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {EmployeeType} from '../employee-type.enum';
-import {EmployeeStore} from '../state/employee.store';
+import {Employee, EmployeeStore} from '../state/employee.store';
 import {EmployeeService} from '../employee.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe((data) => {
+    this.employeeService.getEmployees().subscribe((data:Employee[]) => {
       this.employeeStore.updateUser(data);
     });
   }
