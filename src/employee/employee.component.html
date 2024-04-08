@@ -1,0 +1,13 @@
+<h1>Employees</h1>
+@for(employee of employeeStore.data(); track employee.email){
+    <summary>  {{ employee.lastName }}, {{ employee.firstName }} and
+        Type:
+        @if(employeeTypeEnum.FULL_TIME==employee.employeeType){
+            <span>Full Time</span>
+        }@else if(employeeTypeEnum.PART_TIME==employee.employeeType){
+            <span>Part Time</span>
+        }@else{
+            <span>Other</span>
+        }
+    </summary>
+}
